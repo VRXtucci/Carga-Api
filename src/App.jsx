@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Link, useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, useParams, Routes, Outlet } from 'react-router-dom';
 import './App.css';
 
 const API_URL = 'https://jsonplaceholder.typicode.com';
@@ -42,11 +42,33 @@ function App() {
             <li>
               <Link to="/photos/2">Photo 2</Link>
             </li>
-            {/* Add more links for other photos */}
+            <li>
+              <Link to="/photos/20">Photo 20</Link>
+            </li>
+            <li>
+              <Link to="/photos/25">Photo 25</Link>
+            </li>
+            <li>
+              <Link to="/photos/30">Photo 30</Link>
+            </li>
+            <li>
+              <Link to="/photos/35">Photo 35</Link>
+            </li>
+            <li>
+              <Link to="/photos/40">Photo 40</Link>
+            </li>
+            <li>
+              <Link to="/photos/45">Photo 45</Link>
+            </li>
+            <li>
+              <Link to="/photos/50">Photo 50</Link>
+            </li>
           </ul>
         </nav>
 
-        <Route path="/photos/:photoId" component={PhotoData} />
+        <Routes>
+          <Route path="/photos/:photoId" element={<PhotoData />} />
+        </Routes>
       </div>
     </Router>
   );
